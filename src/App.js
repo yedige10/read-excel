@@ -30,7 +30,7 @@ function App() {
         result[element.seller_status] =
         (result[element.seller_status] ?? 0) + element.price + element.full_fillment;
         if(element.seller_status != "Выплачено"){
-          setBusyMoney(busyMoney + element.price + element.full_fillment)
+          setBusyMoney(prev => prev + element.price + element.full_fillment)
         }
       }        
     });
